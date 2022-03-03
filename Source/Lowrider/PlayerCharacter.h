@@ -24,6 +24,9 @@ protected:
 	UPROPERTY(EditAnywhere, Category = "Components")
 	UCameraComponent* Camera;
 
+	UPROPERTY(EditAnywhere)
+	float moveSpeed;
+
 	void LookRightLeft(float axisvalue);
 	void LookUpDown(float axisvalue);
 	void MoveForwardBackward(float axisvalue);

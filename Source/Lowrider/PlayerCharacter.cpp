@@ -15,6 +15,8 @@ APlayerCharacter::APlayerCharacter()
 	Camera->bUsePawnControlRotation = true;
 
 	this->GetCharacterMovement()->GetNavAgentPropertiesRef().bCanCrouch = false;
+
+	moveSpeed = 1.0f;
 }
 
 // Called when the game starts or when spawned
@@ -55,10 +57,10 @@ void APlayerCharacter::LookUpDown(float axisvalue)
 
 void APlayerCharacter::MoveForwardBackward(float axisvalue)
 {
-	this->AddMovementInput(this->GetActorForwardVector() * axisvalue);
+	this->AddMovementInput(this->GetActorForwardVector() * axisvalue * moveSpeed);
 }
 
 void APlayerCharacter::MoveRightLeft(float axisvalue)
 {
-	this->AddMovementInput(this->GetActorRightVector() * axisvalue);
+	this->AddMovementInput(this->GetActorRightVector() * axisvalue * moveSpeed);
 }
